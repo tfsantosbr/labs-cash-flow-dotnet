@@ -21,14 +21,6 @@ dotnet dev-certs https -ep $USERPROFILE/.aspnet/https/aspnetapp.pfx -p dev@123
 dotnet dev-certs https --trust
 ```
 
-## Running Docker Infrastructure Dependencies
-
-You will need [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/) to run this commands
-
-```bash
-docker-compose up -d
-```
-
 ## Migrations
 
 You will need [.NET EF Tools](https://docs.microsoft.com/en-us/ef/core/cli/dotnet) to run this commands
@@ -56,3 +48,16 @@ dotnet restore
 dotnet build
 dotnet run --project src/CashFlow.Api
 ```
+
+## Running Docker Infrastructure Dependencies
+
+You will need [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/) to run this commands
+
+```bash
+docker-compose up -d
+```
+
+## Accessing API
+
+- Docker -> https://localhost:8001/swagger/index.html
+- Locally ->  https://localhost:7198/swagger/index.html

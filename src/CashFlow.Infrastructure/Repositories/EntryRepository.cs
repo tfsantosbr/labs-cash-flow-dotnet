@@ -54,12 +54,15 @@ public class EntryRepository : IEntryRepository
         _entries.Remove(entry);
 
     // Private Methods
-    
+
     private static IQueryable<Entry> Filter(EntryParameters parameters, IQueryable<Entry> query)
     {
+        var startDate = new DateTime(parameters.Date.Year, parameters.Date.Month, parameters.Date.Day);
+        var endDate = startDate.AddDays(1).AddMilliseconds(-1);
+
         query = query.Where(e =>
-                    e.Date >= parameters.InitialDate &&
-                    e.Date <= parameters.FinalDate);
+                    e.Date >= startDate &&
+                    e.Date <= endDate);
 
         return query;
     }

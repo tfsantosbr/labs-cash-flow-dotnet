@@ -1,4 +1,4 @@
-namespace CashFlow.Domain.Base.Persistence;
+namespace CashFlow.Application.Base.Persistence;
 
 public interface IUnitOfWork
 {

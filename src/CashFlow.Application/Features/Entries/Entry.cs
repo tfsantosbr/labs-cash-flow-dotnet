@@ -1,6 +1,6 @@
-using CashFlow.Domain.Features.Entries.Enums;
+using CashFlow.Application.Features.Entries.Enums;
 
-namespace CashFlow.Domain.Features.Entries;
+namespace CashFlow.Application.Features.Entries;
 
 public class Entry
 {

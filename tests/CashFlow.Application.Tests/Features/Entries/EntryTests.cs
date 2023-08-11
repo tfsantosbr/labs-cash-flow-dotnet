@@ -1,7 +1,7 @@
-using CashFlow.Domain.Features.Entries;
-using CashFlow.Domain.Features.Entries.Enums;
+using CashFlow.Application.Features.Entries;
+using CashFlow.Application.Features.Entries.Enums;
 
-namespace CashFlow.Domain.Tests.Features.Entries;
+namespace CashFlow.Application.Tests.Features.Entries;
 
 public class EntryTests
 {

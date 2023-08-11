@@ -1,4 +1,4 @@
-using CashFlow.Domain.Base.Persistence;
+using CashFlow.Application.Base.Persistence;
 
 namespace CashFlow.Infrastructure.Persistence;
 

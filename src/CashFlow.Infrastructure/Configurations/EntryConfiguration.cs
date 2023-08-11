@@ -1,4 +1,4 @@
-using CashFlow.Domain.Features.Entries;
+using CashFlow.Application.Features.Entries;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

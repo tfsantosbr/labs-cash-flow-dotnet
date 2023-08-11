@@ -1,24 +1,30 @@
-using CashFlow.Domain.Features.Entries.Commands;
-using CashFlow.Domain.Features.Entries.Repositories;
-using CashFlow.Domain.Features.Entries.Models;
-
-using MediatR;
+using CashFlow.Application.Features.Entries.Commands;
+using CashFlow.Application.Features.Entries.Repositories;
+using CashFlow.Application.Features.Entries.Models;
 
 using Microsoft.AspNetCore.Mvc;
+using CashFlow.Application.Base.Models;
+using CashFlow.Application.Base.Handlers;
+using CashFlow.Application.Features.Entries;
 
 namespace CashFlow.Api.Controllers;
 
 [ApiController]
 [Route("entries")]
-public class WeatherForecastController : ControllerBase
+public class EntriesController : ControllerBase
 {
     private readonly IEntryRepository _entryRepository;
-    private readonly IMediator _mediator;
+    private readonly IHandler<CreateEntry, Response<Entry>> _createEntryHandler;
+    private readonly IHandler<RemoveEntry, Response<Entry>> _removeEntryHandler;
 
-    public WeatherForecastController(IEntryRepository entryRepository, IMediator mediator)
+    public EntriesController(
+        IEntryRepository entryRepository,
+        IHandler<CreateEntry, Response<Entry>> createEntryHandler,
+        IHandler<RemoveEntry, Response<Entry>> removeEntryHandler)
     {
         _entryRepository = entryRepository;
-        _mediator = mediator;
+        _createEntryHandler = createEntryHandler;
+        _removeEntryHandler = removeEntryHandler;
     }
 
     [HttpGet]
@@ -43,7 +49,8 @@ public class WeatherForecastController : ControllerBase
         if (!ModelState.IsValid)
             return BadRequest();
 
-        var entry = await _mediator.Send(request);
+        var response = await _createEntryHandler.Handle(request);
+        var entry = response.Data!;
 
         var entryDetails = new EntryDetails
         {
@@ -66,7 +73,7 @@ public class WeatherForecastController : ControllerBase
                 Message = "Lançamento não encontrado"
             });
 
-        await _mediator.Send(new RemoveEntry(entryId));
+        await _removeEntryHandler.Handle(new RemoveEntry(entryId));
 
         return NoContent();
     }

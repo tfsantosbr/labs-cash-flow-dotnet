@@ -6,7 +6,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /build
 COPY ["src/CashFlow.Api/CashFlow.Api.csproj", "src/CashFlow.Api/"]
-COPY ["src/CashFlow.Domain/CashFlow.Domain.csproj", "src/CashFlow.Domain/"]
+COPY ["src/CashFlow.Application/CashFlow.Application.csproj", "src/CashFlow.Application/"]
 COPY ["src/CashFlow.Infrastructure/CashFlow.Infrastructure.csproj", "src/CashFlow.Infrastructure/"]
 RUN dotnet restore "src/CashFlow.Api/CashFlow.Api.csproj"
 COPY . .

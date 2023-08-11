@@ -1,4 +1,4 @@
-namespace CashFlow.Domain.Features.Entries.Enums;
+namespace CashFlow.Application.Features.Entries.Enums;
 
 public enum EntryType : short
 {

@@ -1,6 +1,6 @@
 using System.Reflection;
 
-using CashFlow.Domain.Features.Entries;
+using CashFlow.Application.Features.Entries;
 
 using Microsoft.EntityFrameworkCore;
 

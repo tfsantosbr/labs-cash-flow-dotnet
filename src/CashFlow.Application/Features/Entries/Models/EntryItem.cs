@@ -1,8 +1,8 @@
-using CashFlow.Domain.Features.Entries.Enums;
+using CashFlow.Application.Features.Entries.Enums;
 
-namespace CashFlow.Domain.Features.Entries.Models;
+namespace CashFlow.Application.Features.Entries.Models;
 
-public class EntryDetails
+public class EntryItem
 {
     public Guid Id { get; set; }
     public EntryType Type { get; set; }

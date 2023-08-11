@@ -1,6 +1,6 @@
-using CashFlow.Domain.Features.Entries.Models;
+using CashFlow.Application.Features.Entries.Models;
 
-namespace CashFlow.Domain.Features.Entries.Repositories;
+namespace CashFlow.Application.Features.Entries.Repositories;
 
 public interface IEntryRepository
 {

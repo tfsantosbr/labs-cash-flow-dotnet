@@ -1,6 +1,6 @@
-using CashFlow.Domain.Features.Entries;
-using CashFlow.Domain.Features.Entries.Models;
-using CashFlow.Domain.Features.Entries.Repositories;
+using CashFlow.Application.Features.Entries;
+using CashFlow.Application.Features.Entries.Models;
+using CashFlow.Application.Features.Entries.Repositories;
 
 using Microsoft.EntityFrameworkCore;
 

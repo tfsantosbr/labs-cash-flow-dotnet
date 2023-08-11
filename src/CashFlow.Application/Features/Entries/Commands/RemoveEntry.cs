@@ -1,8 +1,6 @@
-using MediatR;
+namespace CashFlow.Application.Features.Entries.Commands;
 
-namespace CashFlow.Domain.Features.Entries.Commands;
-
-public class RemoveEntry : IRequest
+public class RemoveEntry
 {
     public RemoveEntry(Guid entryId)
     {

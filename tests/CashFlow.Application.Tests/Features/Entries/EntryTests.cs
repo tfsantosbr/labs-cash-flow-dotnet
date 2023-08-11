@@ -52,7 +52,7 @@ public class EntryTests
     {
         // arrange
 
-        var createEntryWithNegativeValue = () => new Entry(
+        static Entry CreateEntryWithNegativeValue() => new(
             type: EntryType.Credit,
             date: DateTime.Now,
             value: -10
@@ -60,7 +60,7 @@ public class EntryTests
 
         // act
 
-        var exception = Record.Exception(createEntryWithNegativeValue);
+        var exception = Record.Exception((Func<Entry>)CreateEntryWithNegativeValue);
 
         // assert
 

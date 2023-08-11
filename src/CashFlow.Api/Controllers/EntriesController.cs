@@ -15,12 +15,12 @@ public class EntriesController : ControllerBase
 {
     private readonly IEntryRepository _entryRepository;
     private readonly IHandler<CreateEntry, Response<Entry>> _createEntryHandler;
-    private readonly IHandler<RemoveEntry, Response<Entry>> _removeEntryHandler;
+    private readonly IHandler<RemoveEntry, Response> _removeEntryHandler;
 
     public EntriesController(
         IEntryRepository entryRepository,
         IHandler<CreateEntry, Response<Entry>> createEntryHandler,
-        IHandler<RemoveEntry, Response<Entry>> removeEntryHandler)
+        IHandler<RemoveEntry, Response> removeEntryHandler)
     {
         _entryRepository = entryRepository;
         _createEntryHandler = createEntryHandler;
